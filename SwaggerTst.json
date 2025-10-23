@@ -1,8 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
+    "version": "1.0.0",
     "title": "GitHub CSV",
-    "version": "1.0"
+    "description": "Teste de ingestão de CSV público"
   },
   "host": "raw.githubusercontent.com",
   "basePath": "/NelsonPereiraTests/InformaticaPOC/main",
@@ -11,6 +12,8 @@
     "/Clients_Random_Tests.csv": {
       "get": {
         "summary": "Obter ficheiro CSV",
+        "description": "Retorna o conteúdo do CSV",
+        "operationId": "getGitHubCSV",
         "produces": ["text/csv"],
         "responses": {
           "200": {
