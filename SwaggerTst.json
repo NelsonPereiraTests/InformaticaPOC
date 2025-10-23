@@ -1,0 +1,23 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "GitHub CSV",
+    "version": "1.0"
+  },
+  "host": "raw.githubusercontent.com",
+  "basePath": "/NelsonPereiraTests/InformaticaPOC/main",
+  "schemes": ["https"],
+  "paths": {
+    "/Clients_Random_Tests.csv": {
+      "get": {
+        "summary": "Obter ficheiro CSV",
+        "produces": ["text/csv"],
+        "responses": {
+          "200": {
+            "description": "CSV obtido com sucesso"
+          }
+        }
+      }
+    }
+  }
+}
