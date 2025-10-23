@@ -1,23 +1,43 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0.0",
-    "title": "GitHub CSV",
-    "description": "Teste de ingestão de CSV público"
+    "title": "Euromonitor Auth",
+    "version": "1.0"
   },
-  "host": "raw.githubusercontent.com",
-  "basePath": "/NelsonPereiraTests/InformaticaPOC/main",
+  "host": "api.euromonitor.com",
+  "basePath": "/authentication/connect",
   "schemes": ["https"],
   "paths": {
-    "/Clients_Random_Tests.csv": {
-      "get": {
-        "summary": "Obter ficheiro CSV",
-        "description": "Retorna o conteúdo do CSV",
-        "operationId": "getGitHubCSV",
-        "produces": ["text/csv"],
+    "/token": {
+      "post": {
+        "summary": "Obter token OAuth",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "formData",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "type": "string",
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
-            "description": "CSV obtido com sucesso"
+            "description": "Token recebido",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "access_token": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
